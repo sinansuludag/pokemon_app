@@ -23,7 +23,7 @@ class _AppTitleState extends State<AppTitle> {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   Constants.title,
-                  style: Constants.getTitleTextStyle(),
+                  style: Constants.getTitleTextStyle(context),
                 )),
           ),
           Align(

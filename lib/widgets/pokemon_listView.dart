@@ -29,18 +29,12 @@ class _PokemonListState extends State<PokemonList> {
           if (snapshot.hasData) {
             List<PokemonModel> _listem = snapshot.data!;
             return GridView.builder(
+              itemCount: _listem.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: UIHelper.getGridViewItemCount()),
               itemBuilder: (context, index) =>
                   PokeListItem(pokemon: _listem[index]),
             );
-            // return ListView.builder(
-            //   itemCount: _listem.length,
-            //   itemBuilder: (context, index) {
-            //     var oankiPokemon = _listem[index];
-            //     return PokeListItem(pokemon: oankiPokemon);
-            //   },
-            // );
           } else if (snapshot.hasError) {
             return Center(
               child: Text('hata çıktı'),
